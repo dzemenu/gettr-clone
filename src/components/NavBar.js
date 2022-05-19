@@ -47,7 +47,7 @@ const NavBar = () => {
         <div className="text-xl font-extrabold cursor-pointer hover:underline ">
           Log In
         </div>
-        <div className="bg-sky-900		 text-white p-5 items-center justify-center flex rounded-full shadow-lg">
+        <div className=" bg-[#3D3C7C]		 text-white p-5 items-center justify-center flex rounded-full shadow-lg">
           Sign Up
         </div>
         <div>|</div>
