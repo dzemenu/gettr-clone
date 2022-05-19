@@ -18,7 +18,7 @@ const SideBar = () => {
 
           <nav className="flex flex-col mt-6 space-y-1">
             <a
-              href=""
+              href="/"
               className="flex items-center px-4 py-2 text-red-700 bg-gray-100 rounded-lg"
             >
               <SearchCircleIcon className="text-red-500 h-10 w-10" />
@@ -42,7 +42,7 @@ const SideBar = () => {
               </summary>
             </details>
           </nav>
-          <img src="../images/getapp.png"></img>
+          <img src="../images/getapp.png" alt=""></img>
         </div>
       </div>
     
