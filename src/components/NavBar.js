@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate=useNavigate()
   return (
-    <div className=" top-0 z-50 fixed h-10 flex w-full justify-between pb-16 pt-1 bg-neutral-50 border-b-2 ">
+    <div className=" top-0 z-50 fixed h-10 flex w-full justify-between pb-16 pt-1 bg-neutral-50 border-b-2 ml-20">
      <div className="w-1/4 mx-50 ">
         <svg
           width="170"
@@ -38,9 +40,9 @@ const NavBar = () => {
           ></path>
         </svg>
       </div>
-      <div className="w-1/2 justify-center flex items-center mt-5 pt-3.5 relative">
+      <div className="w-1/2 justify-center flex items-center mt-5 pt-3.5 relative ">
 
-      <input className="bg-slate-200 h-10 rounded-full w-full mx-auto pl-16  " placeholder="search" />
+      <input className="bg-slate-200 h-10 rounded-full w-full mx-auto pl-16  focus:bg-white" placeholder="search" />
       <span class="absolute text-gray-500 -translate-y-1/2 pointer-events-none top-4 left-4">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -49,7 +51,7 @@ const NavBar = () => {
       </div>
      
       <div className="w-1/4 flex space-x-10 mx-20 pt-3.5">
-        <div className="text-xl font-extrabold cursor-pointer hover:underline ">
+        <div className="text-xl font-extrabold cursor-pointer hover:underline " onClick={()=>navigate('/signup')}>
           Log In
         </div>
         <div className=" bg-[#3D3C7C]	cursor-pointer	 text-white p-5 items-center justify-center flex rounded-full shadow-lg">

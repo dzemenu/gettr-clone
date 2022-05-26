@@ -28,7 +28,7 @@ const recentNews = [
 ]
 const News = () => {
   return (
-    <div className='flex w-1/4 flex-col mt-20 m-5  shadow-xl rounded-lg bg-white'>
+    <div className='flex w-1/5 flex-col mt-20 m-5  shadow-xl rounded-lg bg-white mr-20'>
         <h1 className='text-xl font-extrabold mr-10'> GETTR News</h1>
         <div>
             {

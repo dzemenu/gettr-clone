@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/solid";
 const SideBar = () => {
   return (
-    <div className=" flex flex-col w-1/4 h-screen bg-slate-50  fixed top-20">
+    <div className=" flex flex-col w-1/5 h-screen bg-slate-50  fixed top-20 ml-20">
        
       <div className="bg-red-700 flex justify-center items-center rounded-full shadow-lg p-2 cursor-pointer m-10 w-2/3">
         <PencilAltIcon className="text-white h-8 w-8" />
@@ -43,7 +43,7 @@ const SideBar = () => {
               </summary>
             </details>
           </nav>
-          <img src="../images/getapp.png" alt=""></img>
+          <img src="../images/getapp.png" alt=""className="w-2/3 mt-20"></img>
         </div>
       </div>
     
