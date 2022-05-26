@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/solid";
 const Card = ({ title, logo, description, image, author, date }) => {
   return (
-    <article className="max-w-md mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm">
+    <article className="max-w-md  mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm p-3.5">
       <a href="/">
         <img
           src={image}

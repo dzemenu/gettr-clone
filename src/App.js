@@ -7,7 +7,7 @@ import SideBar from './components/SideBar';
 
 function App() {
   return (
-    <div className="flex  flex-col justify-between bg-stone-50	">
+    <div className="flex  flex-col justify-between bg-stone-50 	">
       <NavBar />
       <div className='flex'>
       <SideBar />   

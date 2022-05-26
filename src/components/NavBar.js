@@ -2,8 +2,8 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <div className=" top-0 z-50 fixed h-10 flex w-full justify-between p-3 bg-neutral-50	 ">
-      <div className="w-1/4 mx-50 h-20">
+    <div className=" top-0 z-50 fixed h-10 flex w-full justify-between pb-16 pt-1 bg-neutral-50 border-b-2 ">
+     <div className="w-1/4 mx-50 ">
         <svg
           width="170"
           height="50"
@@ -38,19 +38,19 @@ const NavBar = () => {
           ></path>
         </svg>
       </div>
-      <div className="w-1/2 justify-center flex items-center mt-5">
+      <div className="w-1/2 justify-center flex items-center mt-5 pt-3.5">
 
       <input className="bg-slate-200 h-10 rounded-full w-2/3 mx-auto  " />
       </div>
      
-      <div className="w-1/4 flex justify-between mx-20">
+      <div className="w-1/2 flex space-x-10 mx-20 pt-3.5">
         <div className="text-xl font-extrabold cursor-pointer hover:underline ">
           Log In
         </div>
         <div className=" bg-[#3D3C7C]	cursor-pointer	 text-white p-5 items-center justify-center flex rounded-full shadow-lg">
           Sign Up
         </div>
-        <div>|</div>
+        <div className="">|</div>
         <div>...</div>
       </div>
     </div>

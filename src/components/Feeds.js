@@ -40,8 +40,8 @@ const posts = [
 ]
 const Feeds = () => {
   return (
-    <div className='flex w-1/2 flex-col justify-center items-center mt-20 mx-auto bg-white'>
-        <h1 className='text-3xl font-extrabold '>Explore</h1>
+    <div className='flex  flex-col justify-between items-center pt-20 mt-20 mx-auto space-x-96 bg-white '>
+        <h1 className='text-3xl font-extrabold mx-auto'>Explore</h1>
      <div>{
             posts.map(post => {
                return <Card {...post}/> 

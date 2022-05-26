@@ -6,7 +6,8 @@ import {
 } from "@heroicons/react/solid";
 const SideBar = () => {
   return (
-    <div className=" flex flex-col w-1/4 h-screen bg-white m-10 mt-20 sticky top-50">
+    <div className=" flex flex-col w-1/4 h-screen bg-slate-50  fixed top-20">
+       
       <div className="bg-red-700 flex justify-center items-center rounded-full shadow-lg p-2 cursor-pointer m-10">
         <PencilAltIcon className="text-white h-10 w-10" />
         <h1 className="text-white text-3xl">Create post</h1>
