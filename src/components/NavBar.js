@@ -38,12 +38,17 @@ const NavBar = () => {
           ></path>
         </svg>
       </div>
-      <div className="w-1/2 justify-center flex items-center mt-5 pt-3.5">
+      <div className="w-1/2 justify-center flex items-center mt-5 pt-3.5 relative">
 
-      <input className="bg-slate-200 h-10 rounded-full w-2/3 mx-auto  " />
+      <input className="bg-slate-200 h-10 rounded-full w-full mx-auto pl-16  " placeholder="search" />
+      <span class="absolute text-gray-500 -translate-y-1/2 pointer-events-none top-4 left-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+</svg>
+  </span>
       </div>
      
-      <div className="w-1/2 flex space-x-10 mx-20 pt-3.5">
+      <div className="w-1/4 flex space-x-10 mx-20 pt-3.5">
         <div className="text-xl font-extrabold cursor-pointer hover:underline ">
           Log In
         </div>
