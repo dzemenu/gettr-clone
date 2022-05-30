@@ -1,30 +1,10 @@
-import React,{useEffect,useState} from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import{useDispatch} from 'react-redux'
-import {signInWithPopup,onAuthStateChanged} from 'firebase/auth'
-import {auth,provider} from '../Firebase'
-import { setSigning } from '../store/store';
-const Login = () => {
-    const [user,setUser]=useState("")
-    const dispatch=useDispatch()
-
+import { signOut ,} from "firebase/auth";
+import { auth } from "../Firebase";
+const Signup = () => {
     const navigate=useNavigate()
-    useEffect(()=>{
-      return onAuthStateChanged(auth,user=>{
-        if(user){
-              setUser({
-    name:user.displayName,
-  
-        })
-        dispatch(setSigning(user.displayName))
-        console.log(user.displayName,'user')
-           navigate("/",{user})
-      }
-      else{
-        setUser(null)
-      }
-      })
-    },[])
+   // signOut()
   return (
     <div className="">
       <div className="flex justify-between mx-20">
@@ -69,7 +49,7 @@ const Login = () => {
         <div>...</div>
       </div>
       <div className="flex flex-col justify-center items-center  w-screen h-screen ">
-      <h1 className="text-3xl p-10 font-extrabold">Log In to GETTR</h1>
+      <h1 className="text-3xl p-10 font-extrabold">Sign Up for GETTR</h1>
         <button className="border-black border rounded-full bg-white p-1 shadow-xl w-1/4 font-extrabold ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,9 +67,9 @@ const Login = () => {
               d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"
             />
           </svg>
-          Log In with Facebook
+          Continue with Facebook
         </button>
-        <button className="border-black border rounded-full bg-white p-1 shadow-xl w-1/4  font-extrabold mt-20" onClick={()=>signInWithPopup(auth,provider)}>
+        <button className="border-black border rounded-full bg-white p-1 shadow-xl w-1/4  font-extrabold mt-20" onClick={()=>signOut(auth)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
@@ -113,7 +93,7 @@ const Login = () => {
               d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
             />
           </svg>
-          Log In with Google{" "}
+          Continue with Google{" "}
         </button>
         <button className="border-black border rounded-full bg-white p-1 shadow-xl w-1/4  font-extrabold mt-20">
           <svg
@@ -128,10 +108,11 @@ const Login = () => {
               fill="#000000"
             ></path>
           </svg>{" "}
-          Log In with Apple
+          Continue with Apple
         </button>
       </div>
     </div>
   );
 };
-export default Login
+
+export default Signup;

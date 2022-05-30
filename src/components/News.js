@@ -28,12 +28,12 @@ const recentNews = [
 ]
 const News = () => {
   return (
-    <div className='flex w-1/5 flex-col mt-20 m-5  shadow-xl rounded-lg bg-white mr-20'>
+    <div className=' hidden lg:flex  w-1/5 flex-col mt-20 m-5  shadow-xl rounded-lg bg-white mr-20'>
         <h1 className='text-xl font-extrabold mr-10'> GETTR News</h1>
         <div>
             {
-                recentNews.map(news => {
-                    return <NewsCard {...news}/>
+                recentNews.map((news,idx) => {
+                    return <NewsCard {...news} key={idx}/>
 
                 })
             }

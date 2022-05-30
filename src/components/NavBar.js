@@ -1,18 +1,50 @@
-import React from "react";
+import { signOut } from "firebase/auth";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../Firebase";
+import { setSigningOut } from "../store/store";
 
 const NavBar = () => {
   const navigate=useNavigate()
+  const name=useSelector(state=>state.signing)?.split(' ')[0].toUpperCase()
+  const dispatch=useDispatch()
+  useEffect(() => {
+
+  },[name])
+  const handleSignOut = () => {
+   
+    navigate("/login")
+    
+    dispatch(setSigningOut())
+
+  }
   return (
-    <div className=" top-0 z-50 fixed h-10 flex w-full justify-between pb-16 pt-1 bg-neutral-50 border-b-2 ml-20">
-     <div className="w-1/4 mx-50 ">
+    <div className=" top-0 z-50 fixed h-10 flex w-full justify-between pb-16 pt-1 bg-neutral-50 border-b-2 ml-20  ">
+     <div className="w-1/5 mx-50 ">
+     <button type="button" className="p-2 sm:mr-4 lg:hidden">
+        <svg
+          className="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
         <svg
           width="170"
           height="50"
           viewBox="0 0 700 297"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="jss1205"
+          className="jss1205 hidden lg:flex"
         >
           <path
             d="M377.286 37.6062C386.381 51.949 391.979 65.942 390.054 78.8856C386.381 104.073 354.547 121.214 348.075 136.607C324.987 112.993 310.819 96.9015 308.545 81.8591C305.047 54.048 344.927 31.3093 348.075 0C355.247 9.09545 357.346 24.8376 357.346 33.933C360.844 29.3853 362.943 23.6132 362.943 17.8411C369.765 25.887 371.864 39.8801 371.864 50.3748C375.187 47.0515 377.111 42.5037 377.286 37.6062Z"
@@ -40,27 +72,32 @@ const NavBar = () => {
           ></path>
         </svg>
       </div>
-      <div className="w-1/2 justify-center flex items-center mt-5 pt-3.5 relative ">
+      <div className="hidden w-2/5 justify-center lg:flex items-center mt-5 pt-3.5 relative ">
 
       <input className="bg-slate-200 h-10 rounded-full w-full mx-auto pl-16  focus:bg-white" placeholder="search" />
-      <span class="absolute text-gray-500 -translate-y-1/2 pointer-events-none top-4 left-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none top-4 left-4">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
 </svg>
   </span>
-      </div>
+      </div >
      
-      <div className="w-1/4 flex space-x-10 mx-20 pt-3.5">
-        <div className="text-xl font-extrabold cursor-pointer hover:underline " onClick={()=>navigate('/signup')}>
+     {name?.length>0 ? <div className="w-2/5 hidden lg:flex space-x-10 mx-20 pt-3.5"><h1> Welcome {name}</h1><div className=" bg-[#3D3C7C]	cursor-pointer	 text-white p-6 items-center justify-center  rounded-full shadow-lg" onClick={()=>{handleSignOut();signOut(auth)}}>
+          Sign Out
+        </div></div>:
+      <div className="w-1/4  space-x-10 mx-20 pt-3.5 hidden lg:flex ">
+        <div className="text-xl font-extrabold cursor-pointer hover:underline " onClick={()=>navigate('/login')} >
           Log In
         </div>
-        <div className=" bg-[#3D3C7C]	cursor-pointer	 text-white p-5 items-center justify-center flex rounded-full shadow-lg">
+        <div className=" bg-[#3D3C7C]	cursor-pointer	 text-white p-4 items-center justify-center flex rounded-full shadow-lg" onClick={()=>navigate('/signup')}>
           Sign Up
         </div>
         <div className="">|</div>
         <div>...</div>
+        
       </div>
-    </div>
+}</div>
+   
   );
 };
 
